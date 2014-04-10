@@ -1,0 +1,63 @@
+doctype html
+
+html lang='en'
+
+	head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+		link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
+		link rel="stylesheet" href="/stylesheets/cover.css"
+
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    meta name="description" content=""
+    meta name="author" content=""
+    link rel="shortcut icon" href="/images/ico/favicon.ico"
+
+    title Cover Template for Bootstrap
+
+    / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /[if lt IE 9]
+      script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"
+      script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"
+
+    - url = ['sky.jpg', 'plane.jpg'].sample
+    css:
+      body { background-image: url(/#{url}); }
+	body
+    .site-wrapper
+      .site-wrapper-inner
+        .cover-container
+          .masthead.clearfix
+            .inner
+              /h3.masthead-brand Cover
+              ul.nav.masthead-nav
+                li
+                  a href="https://soundcloud.com/maxjustus" Listen
+                li
+                  a href="/look" Look
+                li
+                  a href="#" Contact
+
+          .inner.cover
+            == yield
+
+          .mastfoot
+            .inner
+              p
+                a href="http://http://therecordmachine.net/" The Record Machine
+
+    / Placed at the end of the document so the pages load faster
+    script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"
+    script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"
+
+    javascript:
+      $('document').ready(function() {
+        setBack = function() {
+          var yOffset = -Math.floor((Math.random()*600)+1);
+          var xOffset = -Math.floor((Math.random()*800)+1);
+          $('body').css('background-position-y', (yOffset + 'px'));
+          $('body').css('background-position-x', (xOffset + 'px'));
+        }
+
+        setBack();
+      })
